@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kate | JS Demo</title>
+    <link rel="stylesheet" href = "css/style.css">
+    <script type = "text/Javascript" src = "js/script.js"></script>
+</head>
+<body>
+    <div>
+        <h1>Today, we will learn about Javascript!</h1>
+        <p><a href = "https://google.com" target="_blank" onclick = "alert('Are you sure about that?')"> Leave this amazing website(no one will click into this link)</a> </p>
+        
+        <h2> How do we do math with JS?</h2>
+        <p>What is 5 + 6?</p>
+        <button onclick = "document.getElementById('add').innerHTML = 5 + 6"> Click here to find the answer!</button>
+        
+        <p id = "add"></p>
+        <h2> We can also display the date and time with JS!</h2>
+
+        <button onclick="document.getElementById('date').innerHTML = Date()">Click me for the date and time</button>
+        <p id = "date"></p>
+
+        <h2> How do we change text with JS?</h2>
+        <button onclick="document.getElementById('change-text').innerHTML = 'You did it!'">Click me to change the text below</button>
+        <p id = "change-text">This text will change</p>
+
+        <h2>How do we make a function with JS?</h2>
+        <p> Let's use a function to add text.</p>
+        <button onclick = "pFun()"> Click me to run a function!</button>
+        <p id = "p-fun"></p>
+
+        <h2> How do we return user data?</h2>
+        <button onclick = "askName()">Click here to enter your name</button>
+        <p id="ask-name"></p>
+
+        <h2> How do we ask questions with external JS?</h2>
+        <button onclick = "askQ()"> Click here for your question! </button>
+        <p id = "ask-q"></p>
+
+        <h2> How can I make an image appear with a button click? </h2>
+        <button onclick = "showImage()"> Click here for a surprise! </button>
+        <img id="woohoo">
+
+        <h2> Your name reversed </h2>
+        <button onclick = "reverseName()">Click here to see your name reversed</button>
+        <p id = "reverse-name"></p>
+    </div>
+
+    <script>
+        alert("Hello world!\nWelcome to my site!");
+        console.log("Hello world");
+
+        function pFun() {
+            var p = document.getElementById('p-fun');
+            p.innerHTML = 'You just ran a function!';
+            p.style.fontSize = '30px';
+            p.style.fontFamily = "sans-serif";
+            p.style.color = 'brown';
+            p.style.textAlign = 'center';
+            // console.log("function is working");
+        }
+
+        function askName() {
+            var nameReturn = document.getElementById('ask-name');
+            var name = prompt('Please enter your name', 'HERE');
+            if (name == '' || name == 'HERE') {
+                alert("Please enter your name again");
+            } else {
+                nameReturn.innerHTML = 'Hello ' + name;
+            }
+        }
+
+        
+
+        function reverseName() {
+            var nameReturn = document.getElementById('reverse-name');
+            var name = prompt('Please enter your name again', 'HERE');
+            if (name == '' || name == 'Here') {
+                alert("Please enter your name again");
+            } else {
+                var res = '';
+                for (var i = name.length - 1; i >= 0; i--) {
+                    res += name.charAt(i);
+                }
+                nameReturn.innerHTML = 'Your name reversed is ' + res;
+            }
+        }
+    </script>
+</body>
+</html>

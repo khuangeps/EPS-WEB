@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kate Huang | Choose Your Own Adventure Game</title>
+</head>
+<body>
+    <script>
+        function playGame() {
+            alert("You are Peter Rabbit. Despite your mother's warning not to enter Farmer Mr. McGregor's garden, you decide to go there anyway.");
+            var a = confirm("Are you sure about entering the farmer's garden?");
+            if (a) {
+                var b = confirm("You enter Mr. McGregor's garden, full of lettuce and beans and radishes and parsley. Do you choose to eat the vegetables?");
+                if (b) {
+                    var c = prompt("You eat some of Mr. McGregor's vegetables and he finds you. As you run away, you lose your brand new Balenc-hay-aga shoes! \n 1: get your shoes back \n 2: keep running \n 3: bite Mr. McGregor for soiling your shoes that cost your mother a fortune and for ruining your day");
+                    if (c == "1") {
+                        alert("You try to run back and get your shoes back, but you get stabbed by his rake like the piece of pie with your father on Mrs. McGregor's fork. Try again?");
+                        //game over
+                    } else if (c == "2") {
+                        var d = prompt("Good choice - you keep running and escape Mr. McGregor...for now. You accidentally run into a net in a gooseberry bush and get stuck! Choose one: \n 1: Bite the net away \n 2: Take some gooseberries because he won't find you anyway right? \n 3: Take off your jacket and get out. You can make up for those clothes when you get a job once you grow up");
+                        if (d == "1") {
+                            alert("The rope is so hard that it chips off part of your teeth. OUCH! You scream and Mr. McGregor finds you and turns you into pie. Try again?");
+                        } else if (d == "2") {
+                            alert("You take a bite of the gooseberries but little did you know that Mr. McGregor sprayed pesticide on it! Mr. McGregor finds your dead body in the bush and turns you into berry-stuffed rabbit pie. Try again?");
+                        } else if (d == "3") {
+                            var e = prompt("You take off your jacket and keep running away and enter Mr. McGregor's garden shed. You can hear his footsteps heading towards you - where do you choose to hide? \n 1: Watering can \n 2: Flower pot \n Behind his shovels");
+                            if (e == "1") {
+                                alert("After looking around for some time, you finally see the gate, escape the garden, and return home. You win!");
+                                // game won
+                            } else if (e == "2") {
+                                alert("Mr. McGregor grabs a shovel and smashes every flower pot, one by one, and finds you underneath one. He turns you into pie. Try again?");
+                                // game over
+                            } else if (e == "3") {
+                                alert("As soon as Mr. McGregor enters the shed, he grabs a shovel to smash the flower pots, but, to his (very pleasant) surprise, he finds you right in front of him and turns you into pie. Try again?");
+                                // game over
+                            }
+                        } else {
+                            alert("??");
+                        }
+                    } else if (c == "3") {
+                        alert("You bite Mr. McGregor's gardening boots, which he hasn't washed in who knows how long - The smell is so bad you faint and he turns you into pie. Try again?");
+                    } else {
+                        alert("??");
+                    }
+                } else {
+                    alert("You don't eat his vegetables and just SIT THERE. Unsurprisingly, as a rabbit, you have little common sense, and take a nap in the farmer's field.");
+                    alert("While gardening, Mr. McGregor finds you in his field and turns you into pie, just like your dad. Try again?");
+                    // game over
+                }
+            } else {
+                alert("You don't enter his garden. Nice. You missed out on the fun parts of the story. \n (Just go along with the original plot next time...)");
+                //game over
+            }
+
+            var playAgain = confirm("Do you want to play again?");
+            if (playAgain == true) {
+                playGame();
+            } else {
+                alert("Aww :( Thanks for playing this game. Bye!");
+            }
+        }
+        
+
+        playGame();
+    </script>
+
+    <img src = "data:image/jpeg;base64,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">
+    <p>Please play again😞🙏</p>
+</body>
+</html>
